@@ -1,4 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
+import { Axios } from 'axios';
 import { User } from './entiti/OauthApi.entity';
 import { OauthApiService } from './oauth-api.service';
 
@@ -15,5 +16,10 @@ export class OauthApiController {
     @Get('/login')
     getLogin(): User[] {
         return this.oauthApiService.getLogin();
+    }
+
+    @Axios('/login')
+    axiosLogin(): User[] {
+        return this.oauthApiService.axiosLogin();
     }
 }
