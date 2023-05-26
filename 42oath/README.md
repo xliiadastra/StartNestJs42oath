@@ -43,6 +43,13 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+
+# axios install
+$ npm install @nestjs/axios axios
+
+# passport 
+$ npm install --save @nestjs/passport passport passport-oauth2
+
 ```
 
 ## Test
