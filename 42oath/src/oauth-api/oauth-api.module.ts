@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { OauthApiService } from './oauth-api.service';
 import { OauthApiController } from './oauth-api.controller';
-import { FortyTwoStrategy } from './fortytwo.strategy';
+import { FortyTwoStrategy } from './FortyTwo.strategy';
 import { PassportModule } from '@nestjs/passport';
 
 @Module({

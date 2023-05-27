@@ -1,7 +1,9 @@
-import { Controller, Get, UseGuards } from '@nestjs/common';
+import { Controller, Get, Redirect, Req, UseGuards } from '@nestjs/common';
 import { Axios } from 'axios';
+import { get } from 'http';
 import { User } from './entiti/OauthApi.entity';
-import { FortyTwoStrategy } from './fortytwo.strategy';
+import { FortyTwoStrategy } from './FortyTwo.strategy';
+import { FortyTwoAuthGuard } from './FortyTwoAuthGuard';
 import { OauthApiService } from './oauth-api.service';
 
 @Controller('oauth-api')
@@ -14,9 +16,16 @@ export class OauthApiController {
         return "Hello, Fucking World!";
     }
 
-    @UseGuards(FortyTwoStrategy)
+    @UseGuards(FortyTwoAuthGuard)
     @Get('/login')
-    getLogin(): User[] {
-        return this.oauthApiService.getLogin();
+    // @Redirect()
+    async getLogin(@Req() req) {
+        console.log('accessToken1');
+        return 'ok!';
+    }
+
+    @Get('/42/callback')
+    getTest() {
+        return 'okk';
     }
 }
