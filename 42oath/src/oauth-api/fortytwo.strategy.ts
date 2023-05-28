@@ -33,13 +33,12 @@ export class FortyTwoStrategy extends PassportStrategy(Strategy, '42') {
 
     console.log(accessToken);
 
-    console.log('accessToken4');
-
     const user = {
       accessToken,
       refreshToken,
       profile: data,
     };
+
     console.log(user);
     return 'd';
   }
