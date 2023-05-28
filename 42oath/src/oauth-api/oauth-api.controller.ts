@@ -20,12 +20,6 @@ export class OauthApiController {
     @Get('/login')
     // @Redirect()
     async getLogin(@Req() req) {
-        console.log('accessToken1');
         return 'ok!';
-    }
-
-    @Get('/42/callback')
-    getTest() {
-        return 'okk';
     }
 }
