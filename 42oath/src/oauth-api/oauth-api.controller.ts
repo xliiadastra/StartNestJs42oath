@@ -2,7 +2,7 @@ import { Controller, Get, Redirect, Req, UseGuards } from '@nestjs/common';
 import { Axios } from 'axios';
 import { get } from 'http';
 import { User } from './entiti/OauthApi.entity';
-import { FortyTwoStrategy } from './FortyTwo.strategy';
+// import { FortyTwoStrategy } from './FortyTwo.strategy';
 import { FortyTwoAuthGuard } from './FortyTwoAuthGuard';
 import { OauthApiService } from './oauth-api.service';
 
