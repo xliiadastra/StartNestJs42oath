@@ -5,10 +5,15 @@ import { PassportModule } from '@nestjs/passport';
 import { FortyTwoStrategy } from './FortyTwo.strategy';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { typeORMConfig } from 'src/configs/typeorm.config';
+import { User } from './entiti/user.entity';
+import { userRepository } from './repository';
 
 @Module({
   imports: [
     PassportModule.register({defaultStrategy: '42'}),
+    TypeOrmModule.forFeature([User]),
+    // TypeOrmModule.forRoot(typeORMConfig)],
     // TypeOrmModule.forRoot({
     //   type: 'postgres',
     //   host: 'localhost',
